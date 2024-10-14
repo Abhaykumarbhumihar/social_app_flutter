@@ -103,7 +103,8 @@ class CreateAccount extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CongratulationsScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => CongratulationsScreen()),
                   );
                 },
                 icon: const Icon(
