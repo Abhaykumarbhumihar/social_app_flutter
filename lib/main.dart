@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socialmedia/pages/creataccount/presentation/ui/create_account.dart';
-import 'package:socialmedia/pages/login/presentation/ui/loginpage.dart';
 import 'package:socialmedia/pages/onboarding/presentation/bloc/onbarding_bloc.dart';
 import 'package:socialmedia/pages/onboarding/presentation/ui/onboarding_page.dart';
 
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
+        home: WelcomeScreen(),
       ),
     );
   }

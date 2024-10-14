@@ -8,6 +8,7 @@ import '../../../../common/component/page_heading/black_page_heading.dart';
 import '../../../../common/component/page_heading/page_subheading_title.dart';
 import '../../../../common/component/textfield/textfiled_mobile.dart';
 import '../../../../common/responsive/screenUtils.dart';
+import '../../../login/presentation/ui/loginpage.dart';
 
 class CreateAccount extends StatelessWidget {
   CreateAccount({super.key});
@@ -83,7 +84,6 @@ class CreateAccount extends StatelessWidget {
                   ),
                 ),
               ),
-
               SizedBox(height: ScreenUtils.height(context) * 0.03),
               CommonButton(title: "Sign up", onPressed: () {}),
               SizedBox(height: ScreenUtils.height(context) * 0.03),
@@ -117,10 +117,38 @@ class CreateAccount extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              // Add some spacing at the bottom
-              TextButtonComponent(
-                title: "Create an account",
-                onPressed: () {},
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    text: 'Already have an account? ',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: ScreenUtils.width(context) * 0.035,
+                        fontFamily: 'Poppins Regular',
+                        decorationColor: Colors.black),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Sign in here.',
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: ScreenUtils.width(context) * 0.035,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.blueAccent,
+                            fontFamily: 'Poppins Regular'),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()),
+                            );
+                          },
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:socialmedia/common/component/button/button_component.dart';
 import 'package:socialmedia/common/responsive/screenUtils.dart';
+import 'package:socialmedia/pages/creataccount/presentation/ui/create_account.dart';
 
 import '../../../../common/component/button/text_button.dart';
 import '../../../../common/component/page_heading/black_page_heading.dart';
@@ -97,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {
                   // Google sign-in action
                 },
-                icon:  Icon(FontAwesomeIcons.google,color: Colors.blueAccent,),
+                icon:  const Icon(FontAwesomeIcons.google,color: Colors.blueAccent,),
                 label:  Text("Continue with Google",style: TextStyle(
                     color: Colors.blueAccent,
                     fontFamily: 'Poppins Medium',
@@ -107,10 +108,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   side: const BorderSide(color: Colors.blueAccent),
                 ),
               ),
-              Spacer(), // Add some spacing at the bottom
+              const Spacer(), // Add some spacing at the bottom
               TextButtonComponent(
                 title: "Create an account",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CreateAccount()),
+                  );
+                },
               ),
             ],
           ),
