@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:socialmedia/pages/creataccount/presentation/ui/congralution_email.dart';
 
 import '../../../../common/component/button/button_component.dart';
 import '../../../../common/component/button/text_button.dart';
@@ -99,7 +100,12 @@ class CreateAccount extends StatelessWidget {
               ),
               SizedBox(height: ScreenUtils.height(context) * 0.03),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CongratulationsScreen()),
+                  );
+                },
                 icon: const Icon(
                   FontAwesomeIcons.google,
                   color: Colors.blueAccent,
