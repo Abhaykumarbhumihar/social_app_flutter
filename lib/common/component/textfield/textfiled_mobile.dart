@@ -89,6 +89,7 @@ class _CustomTextInputMobileState extends State<CustomTextInputMobile> {
                       (val) {
                         return null;
                       },
+              textInputAction: TextInputAction.next,
               onFieldSubmitted: widget.onFieldSubmitted,
               keyboardType: widget.keyBoardType,
               onTap: widget.onTap ?? () {},
