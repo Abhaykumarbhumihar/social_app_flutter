@@ -4,6 +4,7 @@ import 'package:socialmedia/common/responsive/screenUtils.dart';
 import '../../../../common/component/button/text_button.dart';
 import '../../../../common/component/page_heading/black_page_heading.dart';
 import '../../../../common/component/page_heading/page_subheading_title.dart';
+import '../../../../common/routes/routes.dart';
 
 
 class CongratulationsScreen extends StatelessWidget {
@@ -37,7 +38,9 @@ class CongratulationsScreen extends StatelessWidget {
                 padding:  EdgeInsets.only(bottom: ScreenUtils.width(context)*0.03),
                 child: TextButtonComponent(
                   title:"Sign in here",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, AppRoutes.LOGIN);
+                  },
                 ),
               ),
             ],

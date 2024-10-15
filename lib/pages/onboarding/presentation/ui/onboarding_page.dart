@@ -8,6 +8,7 @@ import 'package:socialmedia/pages/onboarding/presentation/ui/onbarding_view.dart
 
 import '../../../../common/component/button/button_component.dart';
 import '../../../../common/component/button/text_button.dart';
+import '../../../../common/routes/routes.dart';
 import '../../../login/presentation/ui/loginpage.dart';
 import '../../domain/enitity/onboarding_model.dart';
 
@@ -86,10 +87,9 @@ class WelcomeScreen extends StatelessWidget {
                       : "Next",
                   onPressed: () {
                     if (state.currentPage == onboardingPages.length - 1) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, AppRoutes.LOGIN);
+
+
                     } else {
                       int nextPage = state.currentPage + 1;
                       controllerPager.jumpToPage(nextPage);

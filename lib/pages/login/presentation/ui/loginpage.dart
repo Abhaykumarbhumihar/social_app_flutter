@@ -8,16 +8,16 @@ import '../../../../common/component/button/text_button.dart';
 import '../../../../common/component/page_heading/black_page_heading.dart';
 import '../../../../common/component/page_heading/page_subheading_title.dart';
 import '../../../../common/component/textfield/textfiled_mobile.dart';
+import '../../../../common/routes/routes.dart';
 
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
 
-class _LoginScreenState extends State<LoginScreen> {
+
+class LoginScreen extends StatelessWidget {
   bool keepMeSignedIn = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,9 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Checkbox(
                     value: keepMeSignedIn,
                     onChanged: (value) {
-                      setState(() {
-                        keepMeSignedIn = value!;
-                      });
+
+                      keepMeSignedIn = value!;
                     },
                   ),
                   const Text("Keep me signed in",style: TextStyle(
@@ -112,10 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextButtonComponent(
                 title: "Create an account",
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CreateAccount()),
-                  );
+                  Navigator.pushReplacementNamed(context, AppRoutes.CREATEACCOUNT);
                 },
               ),
             ],

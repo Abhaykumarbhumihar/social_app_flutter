@@ -9,6 +9,7 @@ import '../../../../common/component/page_heading/black_page_heading.dart';
 import '../../../../common/component/page_heading/page_subheading_title.dart';
 import '../../../../common/component/textfield/textfiled_mobile.dart';
 import '../../../../common/responsive/screenUtils.dart';
+import '../../../../common/routes/routes.dart';
 import '../../../login/presentation/ui/loginpage.dart';
 
 class CreateAccount extends StatelessWidget {
@@ -146,11 +147,8 @@ class CreateAccount extends StatelessWidget {
                             fontFamily: 'Poppins Regular'),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()),
-                            );
+                            Navigator.pushReplacementNamed(context, AppRoutes.LOGIN);
+
                           },
                       ),
                     ],
